@@ -1,52 +1,90 @@
+import os
 import pandas as pd
+import re
 
-def parse_file(file_path):
-    with open(file_path, 'r') as file:
+def parse_text_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
         lines = file.readlines()
 
-    # Find the starting index of relevant lines
-    start_index = next((i for i, line in enumerate(lines) if 'lidl' in line.lower()), None)
+    # Check if the file contains 'lidl' or 'LIDL' in the first five lines
+    if any('lidl' in line.lower() for line in lines[:5]):
+        products = []
+        parsing_products = False
+        transaction_date = None
+        total_amount_due = None
 
-    if start_index is None:
-        print("Lidl not found in the first 5 lines.")
-        return None
+        # Loop to extract product and price information
+        for line in lines:
+            # Start parsing from the line containing 'EUR' or 'eur'
+            if 'eur' in line.lower():
+                parsing_products = True
 
-    # Find the ending index of relevant lines
-    end_index = next((i for i, line in enumerate(lines) if 'total' in line.lower()), None)
+            # Stop parsing at the line containing 'Total' or 'total'
+            if 'total' in line.lower():
+                break
 
-    if end_index is None:
-        print("Total not found.")
-        return None
+            if parsing_products:
+                # Exclude lines containing 'EUR/kg'
+                if 'eur/kg' in line.lower():
+                    continue
 
-    # Extract the relevant lines
-    relevant_lines = lines[start_index:end_index]
+                # Extract product name and price using a modified regular expression
+                match = re.search(r'([\w\s.]+)\s+([\d.,]+)\s?([BEFbebf])', line)
+                if match:
+                    product_name = match.group(1).strip()
+                    price = match.group(2).replace(',', '.').strip() + match.group(3).upper()
 
-    # Parse the lines to extract product name and price
-    data = []
-    for line in relevant_lines:
-        if 'eur' in line.lower() or 'total' in line.lower():
-            continue  # Skip lines containing 'eur' or 'total'
+                    # Remove the last letter from the price column
+                    price = price[:-1] if price.endswith(('B', 'E', 'F', '8B', '8E', '8F')) else price
 
-        parts = line.split()
-        if len(parts) >= 4:
-            product_name = ' '.join(parts[:-3])
-            price_str = parts[-2].replace(',', '.')
-            try:
-                price = float(price_str)
-                data.append((product_name, price))
-            except ValueError:
-                print(f"Error parsing price in line: {line}")
+                    # Filter out product names that are just numbers
+                    if not product_name.isdigit():
+                        products.append({'product_name': product_name, 'price': price})
 
-    # Create a DataFrame
-    df = pd.DataFrame(data, columns=['Product Name', 'Price'])
+        # Loop to extract transaction date and total amount due information
+        for i, line in enumerate(lines):
+            # Check for the line containing 'VENDITA'
+            if 'vendita' in line.lower():
+                # Extract the date and total amount due from two lines below 'VENDITA'
+                transaction_date_line = lines[i + 2].strip()
+                total_amount_due_line = lines[i + 3].strip()
 
-    return df
+                # Extract the date and total amount due using a regular expression
+                date_match = re.search(r'(\d{2}/\d{2}/\d{4}\s+\d{2}:\d{2}:\d{2})', transaction_date_line)
+                amount_match = re.search(r'IMP.:\s+([\d.,]+)\s+([BEFbebf])', total_amount_due_line)
 
-# Replace 'file_path.txt' with the actual path to your file
-file_path = './text/1-lidl-text.txt'
-result_df = parse_file(file_path)
+                if date_match:
+                    transaction_date = date_match.group(1)
 
-if result_df is not None:
-    # Display the resulting DataFrame
-    print(result_df)
+                if amount_match:
+                    total_amount_due = amount_match.group(1) + amount_match.group(2)
 
+        # Create a Pandas DataFrame for product and price information
+        df_products = pd.DataFrame(products)
+
+        # Create a DataFrame for transaction date and total amount due
+        df_info = pd.DataFrame({'transaction_date': [transaction_date], 'total_amount_due': [total_amount_due]})
+
+        return df_products, df_info
+    else:
+        return None, None
+
+
+# Path to the 'text' folder in the current directory
+folder_path = 'text'
+
+# List to store DataFrames for each file
+dataframes = []
+
+# Iterate through each file in the folder
+for filename in os.listdir(folder_path):
+    if filename.endswith('.txt'):
+        file_path = os.path.join(folder_path, filename)
+        df_products, df_info = parse_text_file(file_path)
+        if df_products is not None:
+            # Add more processing or saving steps if needed
+            print("Product and Price Information:")
+            print(df_products)
+            print("\nTransaction Date and Total Amount Due:")
+            print(df_info)
+            print("\n")
