@@ -58,6 +58,7 @@ def parse_text_file(file_path):
 
                 if amount_match:
                     total_amount_due = amount_match.group(1) + amount_match.group(2)
+                    total_amount_due = total_amount_due[:-1].replace(',', '.') if total_amount_due.endswith(('C', 'E', 'N', 'Z')) else total_amount_due.replace(',', '.')
 
         # Create a Pandas DataFrame for product and price information
         df_products = pd.DataFrame(products)
