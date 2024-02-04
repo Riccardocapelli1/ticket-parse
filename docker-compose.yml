@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  app:
+    image: smart-receipt:latest
+    volumes:
+      - C:/Projects/gitlab/ticket:/py
+    restart: no
+    entrypoint:
+          - /bin/bash
+          - -c
+          - |
+            tesseract "./img/2-lidl.jpg" "./text/2-lidl-text" 

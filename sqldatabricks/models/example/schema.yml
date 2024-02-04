@@ -1,0 +1,10 @@
+
+version: 2
+
+models:
+  - name: tickets_check
+    description: "A starter dbt model"
+  - name: tickets_list
+    description: "A starter dbt model"
+  - name: tickets_total
+    description: "A starter dbt model"

@@ -1,0 +1,80 @@
+[0m23:05:41.497015 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281CC975670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281CC192DF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281CC192CA0>]}
+
+
+============================== 23:05:41.507013 | bdcf38f3-aadf-4b06-a8fe-fb2845ee4f48 ==============================
+[0m23:05:41.507013 [info ] [MainThread]: Running with dbt=1.7.4
+[0m23:05:41.509113 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\scacapric1\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init sqldatabricks', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:05:41.513048 [debug] [MainThread]: Starter project path: C:\Projects\gitlab\ticket\lib\site-packages\dbt\include\starter_project
+[0m23:05:41.584834 [info ] [MainThread]: 
+Your new dbt project "sqldatabricks" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:05:41.587572 [info ] [MainThread]: Setting up your profile.
+[0m23:13:02.540686 [info ] [MainThread]: Profile sqldatabricks written to C:\Users\scacapric1\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m23:13:02.544686 [debug] [MainThread]: Command `dbt init` succeeded at 23:13:02.543819 after 441.12 seconds
+[0m23:13:02.545685 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281CC975670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281CC1A6F10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281CC1A6EE0>]}
+[0m23:13:02.546688 [debug] [MainThread]: Flushing usage events
+[0m23:13:03.702543 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m23:14:00.663949 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D788C5AC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D7812C910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D7812C430>]}
+
+
+============================== 23:14:00.671590 | 1529cdef-0872-4206-b38c-d52cb4dd7736 ==============================
+[0m23:14:00.671590 [info ] [MainThread]: Running with dbt=1.7.4
+[0m23:14:00.672422 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\scacapric1\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:14:00.673423 [info ] [MainThread]: dbt version: 1.7.4
+[0m23:14:00.674316 [info ] [MainThread]: python version: 3.9.13
+[0m23:14:00.675316 [info ] [MainThread]: python path: C:\Projects\gitlab\ticket\Scripts\python.exe
+[0m23:14:00.675844 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m23:14:02.508654 [info ] [MainThread]: Using profiles dir at C:\Users\scacapric1\.dbt
+[0m23:14:02.509895 [info ] [MainThread]: Using profiles.yml file at C:\Users\scacapric1\.dbt\profiles.yml
+[0m23:14:02.511028 [info ] [MainThread]: Using dbt_project.yml file at C:\Projects\gitlab\ticket\dbt_project.yml
+[0m23:14:02.512101 [info ] [MainThread]: adapter type: databricks
+[0m23:14:02.513102 [info ] [MainThread]: adapter version: 1.7.3
+[0m23:14:02.514102 [info ] [MainThread]: Configuration:
+[0m23:14:02.515332 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:14:02.516225 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m23:14:02.517259 [info ] [MainThread]: Required dependencies:
+[0m23:14:02.518226 [debug] [MainThread]: Executing "git --help"
+[0m23:14:02.581557 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone             Clone a repository into a new directory\n   init              Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add               Add file contents to the index\n   mv                Move or rename a file, a directory, or a symlink\n   restore           Restore working tree files\n   rm                Remove files from the working tree and from the index\n   sparse-checkout   Initialize and modify the sparse-checkout\n\nexamine the history and state (see also: git help revisions)\n   bisect            Use binary search to find the commit that introduced a bug\n   diff              Show changes between commits, commit and working tree, etc\n   grep              Print lines matching a pattern\n   log               Show commit logs\n   show              Show various types of objects\n   status            Show the working tree status\n\ngrow, mark and tweak your common history\n   branch            List, create, or delete branches\n   commit            Record changes to the repository\n   merge             Join two or more development histories together\n   rebase            Reapply commits on top of another base tip\n   reset             Reset current HEAD to the specified state\n   switch            Switch branches\n   tag               Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch             Download objects and refs from another repository\n   pull              Fetch from and integrate with another repository or a local branch\n   push              Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:14:02.582561 [debug] [MainThread]: STDERR: "b''"
+[0m23:14:02.584573 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:14:02.585228 [info ] [MainThread]: Connection:
+[0m23:14:02.587764 [info ] [MainThread]:   host: adb-7054819294319787.7.azuredatabricks.net
+[0m23:14:02.588328 [info ] [MainThread]:   http_path: sql/protocolv1/o/7054819294319787/0103-085551-9iurriy4
+[0m23:14:02.589332 [info ] [MainThread]:   catalog: hive_metastore
+[0m23:14:02.590330 [info ] [MainThread]:   schema: default
+[0m23:14:02.591329 [info ] [MainThread]: Registered adapter: databricks=1.7.3
+[0m23:14:02.593331 [debug] [MainThread]: Databricks adapter: Creating DatabricksDBTConnection. name: debug, thread: (39644, 36676), compute: ``
+[0m23:14:02.593331 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m23:14:02.594751 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection._acquire: name: debug, thread: (39644, 36676), compute: ``, acquire_release_count: 0, idle time: 0s
+[0m23:14:02.594751 [debug] [MainThread]: Databricks adapter: Thread (39644, 36676) using default compute resource.
+[0m23:14:02.595750 [debug] [MainThread]: Using databricks connection "debug"
+[0m23:14:02.595750 [debug] [MainThread]: On debug: select 1 as id
+[0m23:14:02.596749 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:14:05.054261 [debug] [MainThread]: SQL status: OK in 2.4600000381469727 seconds
+[0m23:14:05.055261 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection._release: name: debug, thread: (39644, 36676), compute: ``, acquire_release_count: 1, idle time: 0s
+[0m23:14:05.056269 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m23:14:05.057261 [info ] [MainThread]: [31m1 check failed:[0m
+[0m23:14:05.057261 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Projects\gitlab\ticket\dbt_project.yml> not found
+
+[0m23:14:05.060261 [debug] [MainThread]: Command `dbt debug` failed at 23:14:05.059262 after 4.49 seconds
+[0m23:14:05.060806 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m23:14:05.061261 [debug] [MainThread]: On debug: Close
+[0m23:14:05.684880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D788C5AC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D0CC27070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D0CC27DF0>]}
+[0m23:14:05.684880 [debug] [MainThread]: Flushing usage events
+[0m23:14:06.253586 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.

@@ -1,4 +1,4 @@
-()
+(F)
 
 LIDL SUPERMERCADOS S.A.U
 Guzman el Bueno 70
@@ -7,12 +7,12 @@ NIF A60195278
 
 EUR
 -/Solomillos de pollo 4,88 B
-0,589 kg x 8,29  EUR/kg
+0,589 kg x 8,29 EUR/kg
 Dto. Solomillos de 1,22
 -/Huevos ecoldgicos 10 3,79 E
 Patata roja 2Kg 3,49 E
 Zanahoria ecologica 1,49 E
-Calabacin 0,55 E—
+Calabacin 0,55 £—
 0,462 kg x 1,19 EUR/kg
 Berenjena 1,28 E
 0,734 kg x 1,75  EUR/kg
@@ -44,19 +44,15 @@ ticket de compra y embalaje original
 en un plazo maximo de 30 dias sin
 perjuicio de la ley de garantias
 Horario Tienda Lu a Sa 09:00 a 22:00
-
 Domingo 10:00 a 22:00
 Atencion al cliente
-
 www. lidl.es/contacto Tel.900958311
-
 GRACIAS POR SU VISITA
 
-UTA
+UIUC O000000
 
 Devoluciones articulos de bazar con ticket de compra
 y embalaje original en un plazo maximo de 30 dfas sin
-
 perjuicio de la ley de garantias.
 
 Atencién al cliente
@@ -71,3 +67,4 @@ C/ Guzman el Bueno, 70
 28015 Madrid
 
 Informacién de la tienda
+
